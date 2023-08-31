@@ -14,19 +14,20 @@
 }
 .contribution-square {
   position: relative;
+  margin: 1px;
   width: 12px;
   height: 12px;
   font-size: 12px;
   transition: background-color 0.2s;
 }
-.contribution-tooltip {
+.contribution-tooltip, .contribution-tooltip_down {
   position: absolute;
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
   height: 40px;
-  background-color: red;
+  background-color: #ccc;
   transition: background-color 3s;
   z-index: 1000;
   display: flex;
@@ -34,4 +35,21 @@
   align-items: center;
   flex-direction: column;
   font-size: 12px;
+}
+.contribution-tooltip:before, .contribution-tooltip_down:before{
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: -5px;
+  background-color: #ccc;
+  transform: rotate(135deg);
+  z-index: -1;
+}
+.contribution-tooltip_down{
+  top: auto;
+  bottom: -50px;
+}
+.contribution-tooltip_down:before{
+  top: -5px;
 }
